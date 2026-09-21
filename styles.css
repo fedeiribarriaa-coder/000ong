@@ -29,9 +29,16 @@ a{
     text-decoration:none
 }
 
-button,input,textarea{
+button,
+input,
+textarea{
     font:inherit
 }
+
+
+/* =========================
+   HEADER / NAV
+   ========================= */
 
 .nav{
     position:sticky;
@@ -42,25 +49,63 @@ button,input,textarea{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:14px 5%;
+    padding:10px 5%;
+    min-height:78px;
     border-bottom:1px solid var(--line)
 }
 
 .brand{
     display:flex;
-    gap:10px;
     align-items:center;
-    font-weight:900
+    gap:11px;
+    font-weight:900;
 }
 
+/* LOGO */
+
 .brand img{
-    width:54px;
-    height:54px;
+    width:62px;
+    height:62px;
     object-fit:contain;
     border-radius:50%;
     background:#fff;
     display:block;
-    flex:0 0 54px
+    flex:0 0 62px;
+}
+
+/* CONTENEDOR DEL TEXTO */
+
+.brand span{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1;
+    letter-spacing:0;
+}
+
+/* ONG */
+
+.brand .brand-ong{
+    display:block;
+    font-family:"DM Sans",system-ui,sans-serif;
+    font-size:22px;
+    line-height:1;
+    font-weight:900;
+    color:var(--brown);
+    letter-spacing:.2px;
+}
+
+/* ANIMALES RAMALLO */
+
+.brand .brand-name{
+    display:block;
+    margin-top:4px;
+    font-family:"Fraunces",Georgia,serif;
+    font-size:17px;
+    line-height:1;
+    font-weight:700;
+    color:var(--terracotta);
+    letter-spacing:-.2px;
 }
 
 .nav nav{
@@ -92,6 +137,11 @@ button,input,textarea{
 .mobile-menu{
     display:none
 }
+
+
+/* =========================
+   HERO
+   ========================= */
 
 .hero{
     max-width:1180px;
@@ -160,7 +210,17 @@ h3{
     border-radius:999px;
     font-weight:900;
     border:2px solid transparent;
-    cursor:pointer
+    cursor:pointer;
+    letter-spacing:.2px;
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease
+}
+
+.btn:hover{
+    transform:translateY(-2px)
 }
 
 .primary{
@@ -187,7 +247,8 @@ h3{
     border-radius:30px;
     padding:12px;
     box-shadow:var(--shadow);
-    transform:rotate(2deg)
+    transform:rotate(2deg);
+    transition:transform .35s ease,box-shadow .35s ease
 }
 
 .hero-card img{
@@ -195,7 +256,25 @@ h3{
     width:100%;
     aspect-ratio:4/5;
     object-fit:cover;
-    border-radius:22px
+    border-radius:22px;
+    transition:opacity .28s ease,transform .5s ease;
+    opacity:1
+}
+
+.hero-card.is-changing{
+    transform:rotate(2deg) scale(.985);
+    box-shadow:0 12px 34px rgba(87,54,35,.08)
+}
+
+.hero-card.is-changing img{
+    opacity:.05;
+    transform:scale(1.025)
+}
+
+.hero-image-wrap{
+    overflow:hidden;
+    border-radius:22px;
+    background:var(--cream)
 }
 
 .hero-card span,
@@ -203,6 +282,39 @@ h3{
     display:block;
     padding:6px 12px
 }
+
+.hero-caption{
+    padding:5px 12px 12px
+}
+
+.hero-caption span,
+.hero-caption b,
+.hero-caption small{
+    display:block
+}
+
+.hero-caption b{
+    font-family:"Fraunces",Georgia,serif;
+    font-size:27px;
+    letter-spacing:.3px
+}
+
+.hero-caption small{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:2px
+}
+
+.hero-copy,
+.hero-card{
+    position:relative;
+    z-index:2
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
 
 .section{
     max-width:1180px;
@@ -222,6 +334,15 @@ h3{
     max-width:430px;
     margin:0
 }
+
+.section-head h2{
+    letter-spacing:-.8px
+}
+
+
+/* =========================
+   DOG CARDS
+   ========================= */
 
 .dog-grid{
     display:grid;
@@ -254,7 +375,8 @@ h3{
 }
 
 .dog-card h3{
-    margin:0 0 5px
+    margin:0 0 5px;
+    font-family:"Fraunces",Georgia,serif
 }
 
 .dog-card p{
@@ -273,6 +395,11 @@ h3{
     font-weight:900;
     cursor:pointer
 }
+
+
+/* =========================
+   HOW IT WORKS
+   ========================= */
 
 .how{
     background:#fffaf1;
@@ -301,10 +428,19 @@ h3{
     font-size:13px
 }
 
+.steps h3{
+    font-family:"Fraunces",Georgia,serif
+}
+
 .steps p{
     color:var(--muted);
     line-height:1.5
 }
+
+
+/* =========================
+   DONATIONS
+   ========================= */
 
 .donation{
     background:var(--brown);
@@ -334,6 +470,10 @@ h3{
     color:var(--brown);
     padding:22px;
     border-radius:24px
+}
+
+.campaign h3{
+    font-family:"Fraunces",Georgia,serif
 }
 
 .progress{
@@ -383,6 +523,11 @@ h3{
     font-weight:900
 }
 
+
+/* =========================
+   INSTAGRAM
+   ========================= */
+
 .instagram{
     text-align:center
 }
@@ -390,6 +535,11 @@ h3{
 .instagram p{
     margin:0 auto 22px
 }
+
+
+/* =========================
+   FOOTER
+   ========================= */
 
 footer{
     padding:35px 5%;
@@ -409,6 +559,11 @@ footer div{
 footer span{
     color:#d9c9bb
 }
+
+
+/* =========================
+   MODALS
+   ========================= */
 
 dialog{
     border:0;
@@ -459,6 +614,11 @@ dialog>div{
     margin-top:20px
 }
 
+
+/* =========================
+   FORMULARIOS
+   ========================= */
+
 form{
     display:grid;
     gap:13px
@@ -504,216 +664,10 @@ textarea{
     color:#a32e20
 }
 
-.hero h1 em{
-    display:inline-block
-}
 
-.dog-card h3,
-.steps h3,
-.campaign h3{
-    font-family:"Fraunces",Georgia,serif
-}
-
-.nav{
-    min-height:78px;
-    position:relative
-}
-
-.brand span{
-    font-family:"Fraunces",Georgia,serif;
-    font-size:21px;
-    font-weight:700;
-    letter-spacing:-.5px;
-    line-height:1.05
-}
-
-.section-head h2{
-    letter-spacing:-.8px
-}
-
-.btn{
-    letter-spacing:.2px;
-    transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease
-}
-
-.btn:hover{
-    transform:translateY(-2px)
-}
-
-
-/* HERO PELUDITOS — identidad visual y movimiento suave */
-
-.hero{
-    position:relative;
-    overflow:hidden;
-    isolation:isolate
-}
-
-.hero-copy,
-.hero-card{
-    position:relative;
-    z-index:2
-}
-
-.hero-paws{
-    position:absolute;
-    inset:0;
-    z-index:1;
-    pointer-events:none;
-    overflow:hidden;
-    opacity:.16
-}
-
-.hero-paws span{
-    position:absolute;
-    font-size:34px;
-    filter:grayscale(1);
-    color:var(--terracotta);
-    animation:floatPaw 9s ease-in-out infinite;
-    will-change:transform,opacity
-}
-
-.hero-paws span:nth-child(1){
-    left:4%;
-    top:12%;
-    animation-delay:-1s;
-    transform:rotate(-18deg);
-    font-size:30px
-}
-
-.hero-paws span:nth-child(2){
-    left:18%;
-    top:70%;
-    animation-delay:-5s;
-    transform:rotate(24deg);
-    font-size:27px
-}
-
-.hero-paws span:nth-child(3){
-    left:38%;
-    top:18%;
-    animation-delay:-3s;
-    transform:rotate(-28deg);
-    font-size:24px
-}
-
-.hero-paws span:nth-child(4){
-    left:53%;
-    top:82%;
-    animation-delay:-7s;
-    transform:rotate(20deg);
-    font-size:38px
-}
-
-.hero-paws span:nth-child(5){
-    left:67%;
-    top:10%;
-    animation-delay:-2s;
-    transform:rotate(-15deg);
-    font-size:29px
-}
-
-.hero-paws span:nth-child(6){
-    left:78%;
-    top:62%;
-    animation-delay:-6s;
-    transform:rotate(25deg);
-    font-size:25px
-}
-
-.hero-paws span:nth-child(7){
-    left:91%;
-    top:24%;
-    animation-delay:-4s;
-    transform:rotate(-20deg);
-    font-size:32px
-}
-
-.hero-paws span:nth-child(8){
-    left:30%;
-    top:48%;
-    animation-delay:-8s;
-    transform:rotate(17deg);
-    font-size:22px
-}
-
-.hero-paws span:nth-child(9){
-    left:59%;
-    top:42%;
-    animation-delay:-1.5s;
-    transform:rotate(-12deg);
-    font-size:26px
-}
-
-.hero-paws span:nth-child(10){
-    left:86%;
-    top:87%;
-    animation-delay:-4.5s;
-    transform:rotate(18deg);
-    font-size:24px
-}
-
-.hero-card{
-    transition:transform .35s ease,box-shadow .35s ease
-}
-
-.hero-card.is-changing{
-    transform:rotate(2deg) scale(.985);
-    box-shadow:0 12px 34px rgba(87,54,35,.08)
-}
-
-.hero-image-wrap{
-    overflow:hidden;
-    border-radius:22px;
-    background:var(--cream)
-}
-
-.hero-card img{
-    transition:opacity .28s ease,transform .5s ease;
-    opacity:1
-}
-
-.hero-card.is-changing img{
-    opacity:.05;
-    transform:scale(1.025)
-}
-
-.hero-caption{
-    padding:5px 12px 12px
-}
-
-.hero-caption span,
-.hero-caption b,
-.hero-caption small{
-    display:block
-}
-
-.hero-caption b{
-    font-family:"Fraunces",Georgia,serif;
-    font-size:27px;
-    letter-spacing:.3px
-}
-
-.hero-caption small{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:2px
-}
-
-@keyframes floatPaw{
-    0%,100%{
-        transform:translate3d(0,0,0) rotate(-10deg);
-        opacity:.08
-    }
-
-    50%{
-        transform:translate3d(8px,-12px,0) rotate(8deg);
-        opacity:.22
-    }
-}
-
-
-/* TABLET / MOBILE */
+/* =========================
+   TABLET
+   ========================= */
 
 @media(max-width:850px){
 
@@ -730,7 +684,7 @@ textarea{
     .mobile-menu{
         display:none;
         position:absolute;
-        top:84px;
+        top:88px;
         left:5%;
         right:5%;
         background:#fff;
@@ -755,6 +709,31 @@ textarea{
     .mobile-menu a:hover{
         background:var(--cream);
         color:var(--terracotta)
+    }
+
+    /* LOGO MÓVIL */
+
+    .brand{
+        gap:10px
+    }
+
+    .brand img{
+        width:58px;
+        height:58px;
+        flex-basis:58px
+    }
+
+    .brand .brand-ong{
+        font-size:21px
+    }
+
+    .brand .brand-name{
+        font-size:16px;
+        margin-top:4px
+    }
+
+    .nav{
+        min-height:76px
     }
 
     .hero{
@@ -792,37 +771,14 @@ textarea{
         padding-left:5%;
         padding-right:5%
     }
-
-    /* LOGO Y NOMBRE MÁS GRANDES EN MÓVIL */
-
-    .brand img{
-        width:64px;
-        height:64px;
-        flex:0 0 64px
-    }
-
-    .brand span{
-        font-size:23px
-    }
-
-    .nav{
-        min-height:84px
-    }
-
-    .mobile-menu{
-        top:90px
-    }
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media(max-width:760px){
-
-    .hero-paws{
-        opacity:.13
-    }
-
-    .hero-paws span{
-        font-size:27px
-    }
 
     .hero-card{
         max-width:430px
@@ -832,6 +788,7 @@ textarea{
         font-size:24px
     }
 }
+
 
 @media(max-width:520px){
 
@@ -862,40 +819,46 @@ textarea{
         font-size:43px
     }
 
-    /* LOGO Y NOMBRE GRANDES EN CELULARES CHICOS */
+    /* HEADER PEQUEÑO */
 
     .brand{
         gap:9px
     }
 
     .brand img{
-        width:60px;
-        height:60px;
-        flex:0 0 60px
+        width:56px;
+        height:56px;
+        flex-basis:56px
     }
 
-    .brand span{
-        font-size:21px;
-        max-width:190px
+    .brand .brand-ong{
+        font-size:20px
+    }
+
+    .brand .brand-name{
+        font-size:15px;
+        margin-top:4px
     }
 
     .nav{
-        min-height:80px
+        min-height:74px
     }
 
     .mobile-menu{
-        top:86px
+        top:82px
     }
 }
 
+
+/* =========================
+   ACCESIBILIDAD
+   ========================= */
+
 @media(prefers-reduced-motion:reduce){
 
-    .hero-paws span{
-        animation:none
-    }
-
     .hero-card,
-    .hero-card img{
+    .hero-card img,
+    .btn{
         transition:none
     }
 }
