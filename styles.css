@@ -31,4 +31,4 @@
 @media(max-width:760px){.hero-paws{opacity:.13}.hero-paws span{font-size:27px}.hero-card{max-width:430px}.hero-caption b{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.hero-paws span{animation:none}.hero-card,.hero-card img{transition:none}}
 
-@media(max-width:520px){.brand img{width:48px;height:48px;flex-basis:48px}.brand span{font-size:18px}.nav{min-height:70px}}
+@media(max-width:520px){.brand img{width:64px;height:64px;flex-basis:48px}.brand span{font-size:18px}.nav{min-height:70px}}
