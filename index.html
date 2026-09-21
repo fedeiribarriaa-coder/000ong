@@ -1,0 +1,81 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ONG Animales Ramallo | Adopción y rescate</title><meta name="description" content="Conocé perros que esperan una familia y ayudá a los rescates de ONG Animales Ramallo."><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><style>
+.adopt-dialog{width:min(900px,94vw);max-height:92vh;padding:0;border:0;border-radius:24px;background:#fff;color:#171717;box-shadow:0 30px 90px rgba(0,0,0,.28)}
+.adopt-dialog::backdrop{background:rgba(0,0,0,.65)}
+.adopt-wrap{padding:34px 28px 38px;overflow:auto;max-height:92vh}
+.adopt-intro{line-height:1.65;color:#555;margin:12px 0 24px}
+.adopt-section-title{font-weight:900;letter-spacing:.05em;margin:28px 0 18px;font-size:1.05rem}
+.adopt-question{font-weight:700;line-height:1.55;margin:24px 0 9px}
+#adoptForm label{display:block;font-weight:700;margin:16px 0;color:#222;line-height:1.5}
+#adoptForm input:not([type=file]):not([type=hidden]),#adoptForm textarea,#adoptForm select{display:block;width:100%;box-sizing:border-box;margin-top:7px;border:1px solid #d8d8d8;border-radius:12px;padding:12px 13px;font:inherit;background:#fff}
+#adoptForm textarea{min-height:100px;resize:vertical}
+#adoptForm input[type=file]{display:block;width:100%;margin-top:9px;padding:10px;border:1px dashed #bbb;border-radius:12px;background:#fafafa}
+#adoptForm input:invalid:not(:focus),#adoptForm textarea:invalid:not(:focus),#adoptForm select:invalid:not(:focus){border-color:#ddd}
+.hint{font-size:.9rem;font-weight:500;color:#666}
+.adopt-notes{background:#f6f6f4;border-radius:16px;padding:18px;line-height:1.6;color:#444}
+.adopt-submit{margin-top:26px;width:100%}
+.hp{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;opacity:0!important}
+@media(max-width:600px){.adopt-wrap{padding:26px 17px 30px}.adopt-dialog{width:96vw;border-radius:18px}}
+</style></head><body><header class="nav"><a href="#inicio" class="brand"><img src="assets/logo.png" alt="Logo ONG Animales Ramallo"><span>ONG Animales Ramallo</span></a><nav class="desktop-nav"><a href="#adopciones">Adoptar</a><a href="#como">Cómo funciona</a><a href="#donar">Donar</a><a href="admin.html" class="admin-link">Panel</a></nav><button id="menuBtn" class="menu" type="button" aria-label="Abrir menú" aria-expanded="false">☰</button><nav id="mobileMenu" class="mobile-menu" aria-label="Menú móvil"><a href="#adopciones">🐾 Adoptar</a><a href="#como">📋 Cómo funciona</a><a href="#donar">💛 Donar</a><a href="admin.html" class="admin-link">🔐 Panel</a></nav></header><main id="inicio"><section class="hero"><div class="hero-paws" aria-hidden="true"><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span></div><div class="hero-copy"><span class="eyebrow">RESCATE · CUIDADO · SEGUNDAS OPORTUNIDADES</span><h1>Una familia puede cambiarlo todo.<br><em>Vos también.</em></h1><p>Hay un peludito esperando una familia responsable. Conocé sus historias y ayudanos a seguir rescatando.</p><div class="actions"><a class="btn primary" href="#adopciones">QUIERO ADOPTAR →</a><a class="btn secondary" href="#donar">QUIERO DONAR ♡</a></div><div class="hero-stat">🐾 <b id="dogCount">21</b> perros esperan una oportunidad</div></div><div class="hero-card" id="heroCard"><div class="hero-image-wrap"><img id="heroDog" src="assets/dogs/coca.jpg" alt="Coca, perro en adopción"></div><div class="hero-caption"><span>❤️ También está esperando</span><b id="heroDogName">COCA</b><small id="heroDogMeta">5 años · mediana · hembra</small></div></div></section><section id="adopciones" class="section"><div class="section-head"><div><span class="eyebrow">EN ADOPCIÓN</span><h2>Ellos te están esperando</h2></div><p>Deslizá, conocelos y elegí a quién querés darle una nueva oportunidad.</p></div><div id="dogs" class="dog-grid"></div></section><section id="como" class="how section"><div class="section-head"><div><span class="eyebrow">ADOPTAR ES UN COMPROMISO</span><h2>¿Cómo funciona?</h2></div><p>Queremos que cada adopción sea responsable, acompañada y para toda la vida.</p></div><div class="steps"><article><b>01</b><h3>🐾 Conocé</h3><p>Elegí un perro y conocé su historia, personalidad y necesidades.</p></article><article><b>02</b><h3>📝 Postulate</h3><p>Completá el formulario de adopción con información sobre vos y tu hogar.</p></article><article><b>03</b><h3>💬 Evaluamos</h3><p>El equipo revisa la solicitud y se comunica con vos para avanzar.</p></article><article><b>04</b><h3>❤️ Adoptás</h3><p>Si todo está listo, empieza una nueva historia juntos.</p></article></div></section><section id="donar" class="donation section"><div class="section-head"><div><span class="eyebrow">AYUDÁ A SEGUIR RESCATANDO</span><h2>Una donación también puede salvar una vida.</h2></div><p>Veterinaria, alimento, medicamentos y rescates necesitan de personas que quieran dar una mano.</p></div><div id="campaigns" class="campaigns"></div><div class="donation-box"><h3>💛 Elegí cómo ayudar</h3><p>Podés hacer un aporte único o mensual a través de Mercado Pago.</p><div id="mpButtons" class="amounts"></div><small>También podés donar al alias <b>ongramallo</b>.</small></div></section><section class="instagram section"><span class="eyebrow">SEGUINOS</span><h2>Más historias, rescates y adopciones</h2><p>Todo lo que pasa día a día también lo compartimos en Instagram.</p><a class="btn primary" href="https://www.instagram.com/onganimalesramallo" target="_blank" rel="noopener">@onganimalesramallo ↗</a></section></main><footer><div><b>ONG Animales Ramallo</b><span>Rescatando, cuidando y buscando familias responsables.</span></div><span>Hecho con ❤️ por quienes creen en las segundas oportunidades.</span></footer><dialog id="dogModal"><button class="close" data-close>×</button><div id="dogModalContent"></div></dialog><dialog id="adoptModal" class="adopt-dialog">
+<button class="close" data-close aria-label="Cerrar">×</button>
+<div class="adopt-wrap">
+  <span class="eyebrow">QUIERO ADOPTAR</span>
+  <h2 id="adoptTitle">FORMULARIO DE ADOPCIÓN</h2>
+  <p class="adopt-intro">•El formulario que no tenga todos los datos que se piden no será considerado.<br>•Deberá responderlo una persona mayor de 21 años.<br>•Necesitamos que te explayes en cada respuesta así te podemos conocer mejor, tomate el tiempo que creas necesario y responde a conciencia.<br>•Si en esta semana no te contactamos es porque no cumpliste con los requisitos solicitados o no fuiste seleccionado.</p>
+
+  <form id="adoptForm" action="https://formsubmit.co/celinita3535@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+    <input type="hidden" name="_subject" value="Nueva solicitud de adopción - ONG Animales Ramallo">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="https://onganimalesramallo.vercel.app/">
+    <input type="hidden" name="animal_interes" id="animalId">
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp">
+
+    <div class="adopt-section-title">DATOS DEL POSIBLE ADOPTANTE</div>
+    <label>Nombre completo *<input required name="nombre_completo" id="name" type="text"></label>
+    <label>Edad *<input required name="edad" id="age" type="number" min="22"></label>
+    <label>Dirección exacta *<input required name="direccion_exacta" type="text"></label>
+    <label>Profesión/ocupación *<input required name="profesion_ocupacion" type="text"></label>
+    <label>Número de contacto *<input required name="numero_contacto" type="tel"></label>
+    <label>Estás interesado en un animal en particular? Si es así escribí su nombre acá. *<input required name="animal_interes" id="animalInterest" type="text"></label>
+    <label>En caso de que haya sido adoptado, estas dispuesto a adoptar otro? *
+      <select required name="acepta_otro_animal"><option value="">Seleccioná una opción</option><option>Si, estoy dispuesto</option><option>No estoy dispuesto</option></select>
+    </label>
+    <label>Por favor describí las características del animal que buscas adoptar y cualquier dato que consideres a tener en cuenta. *<textarea required name="caracteristicas_animal"></textarea></label>
+
+    <div class="adopt-question">1- El animal que vas a adoptar es para vos o para un tercero? En caso de que sea para un tercero deberá escribir directamente la persona. *</div>
+    <label><select required name="para_quien"><option value="">Seleccioná una opción</option><option>Es para mi</option><option>Es para un tercero, ya le aviso</option></select></label>
+    <label>2- Que función desempeñaría en tu hogar? (compañía, guardia, trabajo, etc). *<textarea required name="funcion_hogar"></textarea></label>
+    <label>3- a) ¿La casa en donde vivis, es de tu propiedad?<br>b) Si sos inquilino, el propietario te permite tener una mascota? *<textarea required name="vivienda_propiedad"></textarea></label>
+    <label>4- La casa tiene patio, terraza, balcón? En caso de tener patio, está cerrado?<br>En caso de tener balcón, tiene red?<br>En caso de tener terraza, es segura?<br><span class="hint">Luego deberás adjuntar foto.</span> *<textarea required name="seguridad_exterior"></textarea></label>
+    <label>Foto del patio / casa *<input required name="foto_patio_casa" type="file" accept="image/*"></label>
+    <label>5- Cuantas horas por día quedaría solo el animal? *<textarea required name="horas_solo"></textarea></label>
+    <label>6- Al cuidado de quien quedaría cuando te vayas de vacaciones? *<textarea required name="cuidados_vacaciones"></textarea></label>
+    <label>7- Donde estaría el animal durante el día? Donde dormiría? *<textarea required name="dia_y_noche"></textarea></label>
+    <label>8- Cuántas personas viven en tu casa y qué edades tienen? Están todos de acuerdo en adoptar una mascota? *<textarea required name="personas_domicilio"></textarea></label>
+    <label>9- Tenes otras mascotas? Especifica especie, edad, estan vacunados? Estan esterilizados?<br>Quién es tu veterinario de confianza?<br><span class="hint">Luego deberás adjuntar fotos.</span> *<textarea required name="otras_mascotas"></textarea></label>
+    <label>Fotos de tus mascotas *<input required name="fotos_mascotas" type="file" accept="image/*" multiple></label>
+    <label>10- Tenes recursos económicos para mantenerlo? Darle un alimento de buena calidad, desparasitarlo, aplicarle pipeta o pastilla para pulgas y garrapatas mensualmente, aplicarle las vacunas correspondientes, castrarlo en caso haya sido adoptado de cachorro o afrontar cualquier eventualidad que se presente? *<textarea required name="recursos_economicos"></textarea></label>
+    <label>11- Si el animal fue dado en adopción siendo cachorro deberás castrarlo a los 6 meses de edad, estás de acuerdo? En caso de respuesta negativa especificar motivo. *<textarea required name="castracion"></textarea></label>
+    <label>12- Estás al tanto de que el animal necesitará aproximadamente 15/30 días o tal vez MÁS para adaptarse a su nueva familia, horarios, lugares, etc? *<textarea required name="adaptacion"></textarea></label>
+    <label>13- Si no logra adaptarse o tiene problemas de comportamiento, que harías?<br>Contactarías a un adiestrador? *<textarea required name="problemas_comportamiento"></textarea></label>
+    <label>14- En caso de mudanza, que harías con el animal? *<textarea required name="mudanza"></textarea></label>
+    <div class="adopt-question">15- Si surgiera algún motivo por el cual no pudieras en forma definitiva hacerte cargo del adoptado deberá VOLVER a nuestra asociación y bajo ningún concepto podrá el ADOPTANTE entregarlo en nueva adopción. Estás de acuerdo con este punto? *</div>
+    <label><select required name="acuerdo_devolucion"><option value="">Seleccioná una opción</option><option>Si, estoy totalmente de acuerdo</option><option>No estoy de acuerdo</option></select></label>
+    <div class="adopt-question">16- El animal bajo ningún punto de vista deberá estar en la calle SOLO, siempre supervisado por sus dueños, con collar, correa y chapita identificatoria.<br><br>La CALLE NO es OPCION.<br><br>Si vemos irregularidades nos contactaremos 1 vez y si esto sigue sucediendo retiraremos el animal. *</div>
+    <label><textarea required name="calle_supervision" placeholder="Escribí tu respuesta"></textarea></label>
+    <div class="adopt-question">17- Estás de acuerdo con un seguimiento vía WhatsApp? *</div>
+    <label><select required name="seguimiento_whatsapp"><option value="">Seleccioná una opción</option><option>Si, estoy totalmente de acuerdo</option><option>No estoy de acuerdo</option></select></label>
+    <label>18- La adopción es para toda la vida, sos consciente de la responsabilidad que eso significa?<br>Teniendo en cuenta de que un animal vive entre 10 y 15 años. *<textarea required name="responsabilidad_vida"></textarea></label>
+    <label>19- Cual es tu usuario de instagram o facebook? *<input required name="instagram_facebook" type="text"></label>
+
+    <div class="adopt-section-title">ACLARACIONES</div>
+    <div class="adopt-notes">• En caso de que el animal sea cachorro deberá estar adentro hasta terminar su calendario de vacunación, si sale afuera antes de eso puede contraer una enfermedad viral.<br><br>• El perro deberá tener collar y chapita identificatoria.<br><br>• En caso de que el animal no se encuentre en las condiciones acordadas se retirará para ubicarlo nuevamente.<br><br>• El animal será llevado al domicilio para constatar que el lugar sea seguro, conocer a la familia personalmente y firmar un contrato de adopción el cual pasa a ser responsable del animal.</div>
+
+    <button class="btn primary adopt-submit" type="submit">ENVIAR ❤️</button>
+    <div id="formMsg" class="form-msg" role="alert"></div>
+  </form>
+</div>
+</dialog><script src="app.js"></script></body></html>
